@@ -5,5 +5,5 @@ before_install:
   - docker pull base/archlinux
 
 script:
-  - docker run -v $(pwd):/build base/archlinux "cd /build; bash build.sh"
+  - docker run -v $(pwd):/build base/archlinux "pwd; cd /build; ls -lha; bash build.sh"
 
