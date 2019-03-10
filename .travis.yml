@@ -2,11 +2,10 @@ services:
   - docker
 
 before_install:
-  - docker pull archimg/base-devel
+  - docker pull flamusdiu/archlinux-devel
 
 script:
-  - docker run -v $(pwd):/build -w /build archimg/base-devel /bin/bash -c "pacman -Syu grub --noconfirm && bash build.sh"
-
+  - docker run -v $(pwd):/build -w /build flamusdiu/archlinux-devel /bin/bash -c "sudo pacman -Syu grub --noconfirm && bash build.sh"
 before_deploy:
   - export FILE_TO_UPLOAD="$(pwd)/out/bootia32.efi"
 
