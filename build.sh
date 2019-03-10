@@ -1,5 +1,5 @@
 #!/bin/bash
-FSLABEL='ARCH_201902'
+FSLABEL='ARCH_201903'
 
 echo 'mkdir'
 
