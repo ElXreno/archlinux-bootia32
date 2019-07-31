@@ -8,6 +8,8 @@ services:
     - docker
 
 before_install:
+    - echo 'Europe/Minsk' | sudo tee /etc/timezone
+    - sudo dpkg-reconfigure --frontend noninteractive tzdata
     - docker pull archlinux/base
 
 script:
