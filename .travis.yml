@@ -1,21 +1,22 @@
 language: minimal
 
 services:
-  - docker
+    - docker
 
 before_install:
-  - docker pull archlinux/base
+    - docker pull archlinux/base
 
 script:
-  - docker run -v $(pwd):/build -w /build archlinux/base /bin/bash -c "pacman -Syu grub --noconfirm && bash build.sh"
+    - docker run -v $(pwd):/build -w /build archlinux/base /bin/bash -c "pacman -Syu grub --noconfirm && bash build.sh"
 
 before_deploy:
-  - export FILE_TO_UPLOAD="$(pwd)/out/bootia32.efi"
+    - git config --local user.name "ElXreno"
+    - git config --local user.email "elxreno@gmail.com"
+    - export TRAVIS_TAG="$(cat out/fslabel)-build$TRAVIS_BUILD_NUMBER"
+    - git tag $TRAVIS_TAG
 
 deploy:
-  provider: releases
-  api_key: $OAUTH_KEY
-  file: $FILE_TO_UPLOAD
-  skip_cleanup: true
-  on:
-    tags: true
+    provider: releases
+    api_key: $OAUTH_KEY
+    file: "out/bootia32.efi"
+    skip_cleanup: true
