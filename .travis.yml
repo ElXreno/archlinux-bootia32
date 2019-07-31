@@ -13,7 +13,7 @@ before_deploy:
     - git config --local user.name "ElXreno"
     - git config --local user.email "elxreno@gmail.com"
     - export TRAVIS_TAG="$(cat out/fslabel)-build$TRAVIS_BUILD_NUMBER"
-    - git tag $TRAVIS_TAG
+    - git tag $TRAVIS_TAG -m "* $(cat out/fslabel)"
 
 deploy:
     provider: releases
