@@ -2,11 +2,11 @@
 DATE=$(date +%Y%m)
 FSLABEL="ARCH_$DATE"
 
-echo "save FSLABEL"
-echo $FSLABEL > out/fslabel
-
 echo 'mkdir'
 mkdir out
+
+echo "save FSLABEL"
+echo $FSLABEL > out/fslabel
 
 echo 'sed'
 sed -i -e "s/<FS-LABEL>/${FSLABEL}/g" grub.cfg
