@@ -1,5 +1,9 @@
 language: minimal
 
+branches:
+  only:
+  - master
+
 services:
     - docker
 
@@ -20,3 +24,5 @@ deploy:
     api_key: $OAUTH_KEY
     file: "out/bootia32.efi"
     skip_cleanup: true
+    on:
+        tags: false
