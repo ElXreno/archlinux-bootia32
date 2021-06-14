@@ -1,4 +1,4 @@
-# archlinux-bootia32 [![Build Status](https://travis-ci.com/ElXreno/archlinux-bootia32.svg?branch=master)](https://travis-ci.com/ElXreno/archlinux-bootia32)
+# archlinux-bootia32 [![build](https://github.com/ElXreno/archlinux-bootia32/actions/workflows/build.yml/badge.svg)](https://github.com/ElXreno/archlinux-bootia32/actions/workflows/build.yml)
 bootia32.efi for ArchLinux 
 
 # Usage:
